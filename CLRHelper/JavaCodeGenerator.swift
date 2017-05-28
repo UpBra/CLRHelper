@@ -9,7 +9,7 @@ import AppKit
 
 class JavaCodeGenerator: CodeGenerator {
 
-    static func write(_ list: NSColorList, toURL url: URL) {
-
+    static func write(_ container: ColorsContainer, toDir directory: String) {
+        
     }
 }

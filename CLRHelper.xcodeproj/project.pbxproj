@@ -11,12 +11,20 @@
 		753648321ED7410800DB3E7A /* String+CLRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753648311ED7410800DB3E7A /* String+CLRHelper.swift */; };
 		753648341ED7411000DB3E7A /* NSColor+CLRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753648331ED7411000DB3E7A /* NSColor+CLRHelper.swift */; };
 		753648361ED7424500DB3E7A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753648351ED7424500DB3E7A /* Constants.swift */; };
-		753648381ED7503A00DB3E7A /* ColorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753648371ED7503A00DB3E7A /* ColorsModel.swift */; };
+		753648381ED7503A00DB3E7A /* ColorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753648371ED7503A00DB3E7A /* ColorsContainer.swift */; };
 		753648511ED8CC4A00DB3E7A /* JavaCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753648501ED8CC4A00DB3E7A /* JavaCodeGenerator.swift */; };
 		756801CD1ED5108500F8A192 /* ColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756801CC1ED5108500F8A192 /* ColorItem.swift */; };
 		756801CF1ED51BA700F8A192 /* SwiftCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756801CE1ED51BA700F8A192 /* SwiftCodeGenerator.swift */; };
+		758E55FF1ED90F8300B3D3B4 /* OptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E55FE1ED90F8300B3D3B4 /* OptionModel.swift */; };
+		758E56011ED91AC300B3D3B4 /* JSONInputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E56001ED91AC300B3D3B4 /* JSONInputHandler.swift */; };
+		758E56031ED91BBC00B3D3B4 /* CLRInputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E56021ED91BBC00B3D3B4 /* CLRInputHandler.swift */; };
+		758E56051ED91C5100B3D3B4 /* InputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E56041ED91C5100B3D3B4 /* InputHandler.swift */; };
+		758E560B1EDB132900B3D3B4 /* NSColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E560A1EDB132900B3D3B4 /* NSColorProvider.swift */; };
+		758E560D1EDB134D00B3D3B4 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E560C1EDB134D00B3D3B4 /* JSONRepresentable.swift */; };
+		758E560F1EDB213600B3D3B4 /* NSColorListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E560E1EDB213600B3D3B4 /* NSColorListProvider.swift */; };
+		758E56141EDB27AD00B3D3B4 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E56131EDB27AD00B3D3B4 /* JSONParser.swift */; };
+		758E56161EDB27F000B3D3B4 /* CLRParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E56151EDB27F000B3D3B4 /* CLRParser.swift */; };
 		75910A251ED4E0CD001078B6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75910A241ED4E0CD001078B6 /* main.swift */; };
-		75910A2C1ED4F7CF001078B6 /* NSColorList+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75910A2B1ED4F7CF001078B6 /* NSColorList+JSON.swift */; };
 		75910A341ED4F88D001078B6 /* CLRHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75910A331ED4F88D001078B6 /* CLRHelperTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,13 +45,21 @@
 		753648311ED7410800DB3E7A /* String+CLRHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CLRHelper.swift"; sourceTree = "<group>"; };
 		753648331ED7411000DB3E7A /* NSColor+CLRHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+CLRHelper.swift"; sourceTree = "<group>"; };
 		753648351ED7424500DB3E7A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		753648371ED7503A00DB3E7A /* ColorsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsModel.swift; sourceTree = "<group>"; };
+		753648371ED7503A00DB3E7A /* ColorsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsContainer.swift; sourceTree = "<group>"; };
 		753648501ED8CC4A00DB3E7A /* JavaCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JavaCodeGenerator.swift; sourceTree = "<group>"; };
 		756801CC1ED5108500F8A192 /* ColorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorItem.swift; sourceTree = "<group>"; };
 		756801CE1ED51BA700F8A192 /* SwiftCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftCodeGenerator.swift; sourceTree = "<group>"; };
+		758E55FE1ED90F8300B3D3B4 /* OptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionModel.swift; sourceTree = "<group>"; };
+		758E56001ED91AC300B3D3B4 /* JSONInputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInputHandler.swift; sourceTree = "<group>"; };
+		758E56021ED91BBC00B3D3B4 /* CLRInputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLRInputHandler.swift; sourceTree = "<group>"; };
+		758E56041ED91C5100B3D3B4 /* InputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputHandler.swift; sourceTree = "<group>"; };
+		758E560A1EDB132900B3D3B4 /* NSColorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorProvider.swift; sourceTree = "<group>"; };
+		758E560C1EDB134D00B3D3B4 /* JSONRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
+		758E560E1EDB213600B3D3B4 /* NSColorListProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColorListProvider.swift; sourceTree = "<group>"; };
+		758E56131EDB27AD00B3D3B4 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		758E56151EDB27F000B3D3B4 /* CLRParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLRParser.swift; sourceTree = "<group>"; };
 		75910A211ED4E0CD001078B6 /* CLRHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLRHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		75910A241ED4E0CD001078B6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		75910A2B1ED4F7CF001078B6 /* NSColorList+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColorList+JSON.swift"; sourceTree = "<group>"; };
 		75910A311ED4F88D001078B6 /* CLRHelperTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLRHelperTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75910A331ED4F88D001078B6 /* CLRHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLRHelperTest.swift; sourceTree = "<group>"; };
 		75910A351ED4F88D001078B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				7536482D1ED7402700DB3E7A /* CodeGenerator.swift */,
+				758E560C1EDB134D00B3D3B4 /* JSONRepresentable.swift */,
+				758E560E1EDB213600B3D3B4 /* NSColorListProvider.swift */,
+				758E560A1EDB132900B3D3B4 /* NSColorProvider.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -78,7 +97,6 @@
 		7536482F1ED7406B00DB3E7A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				75910A2B1ED4F7CF001078B6 /* NSColorList+JSON.swift */,
 				753648311ED7410800DB3E7A /* String+CLRHelper.swift */,
 				753648331ED7411000DB3E7A /* NSColor+CLRHelper.swift */,
 			);
@@ -88,12 +106,41 @@
 		753648301ED740B300DB3E7A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				753648371ED7503A00DB3E7A /* ColorsModel.swift */,
-				756801CC1ED5108500F8A192 /* ColorItem.swift */,
-				756801CE1ED51BA700F8A192 /* SwiftCodeGenerator.swift */,
-				753648501ED8CC4A00DB3E7A /* JavaCodeGenerator.swift */,
+				758E56021ED91BBC00B3D3B4 /* CLRInputHandler.swift */,
+				758E56041ED91C5100B3D3B4 /* InputHandler.swift */,
+				758E56001ED91AC300B3D3B4 /* JSONInputHandler.swift */,
+				758E56091EDB110C00B3D3B4 /* CodeGenerators */,
+				758E56121EDB27A300B3D3B4 /* Parsers */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		758E56081EDB101A00B3D3B4 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				756801CC1ED5108500F8A192 /* ColorItem.swift */,
+				753648371ED7503A00DB3E7A /* ColorsContainer.swift */,
+				758E55FE1ED90F8300B3D3B4 /* OptionModel.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		758E56091EDB110C00B3D3B4 /* CodeGenerators */ = {
+			isa = PBXGroup;
+			children = (
+				753648501ED8CC4A00DB3E7A /* JavaCodeGenerator.swift */,
+				756801CE1ED51BA700F8A192 /* SwiftCodeGenerator.swift */,
+			);
+			name = CodeGenerators;
+			sourceTree = "<group>";
+		};
+		758E56121EDB27A300B3D3B4 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				758E56151EDB27F000B3D3B4 /* CLRParser.swift */,
+				758E56131EDB27AD00B3D3B4 /* JSONParser.swift */,
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 		75910A181ED4E0CD001078B6 = {
@@ -119,6 +166,7 @@
 			children = (
 				75910A241ED4E0CD001078B6 /* main.swift */,
 				753648351ED7424500DB3E7A /* Constants.swift */,
+				758E56081EDB101A00B3D3B4 /* Objects */,
 				753648301ED740B300DB3E7A /* Classes */,
 				7536482C1ED7400300DB3E7A /* Protocols */,
 				7536482F1ED7406B00DB3E7A /* Extensions */,
@@ -229,14 +277,22 @@
 			files = (
 				753648511ED8CC4A00DB3E7A /* JavaCodeGenerator.swift in Sources */,
 				756801CD1ED5108500F8A192 /* ColorItem.swift in Sources */,
-				75910A2C1ED4F7CF001078B6 /* NSColorList+JSON.swift in Sources */,
-				753648381ED7503A00DB3E7A /* ColorsModel.swift in Sources */,
+				758E56031ED91BBC00B3D3B4 /* CLRInputHandler.swift in Sources */,
+				758E560F1EDB213600B3D3B4 /* NSColorListProvider.swift in Sources */,
+				753648381ED7503A00DB3E7A /* ColorsContainer.swift in Sources */,
+				758E56141EDB27AD00B3D3B4 /* JSONParser.swift in Sources */,
 				753648321ED7410800DB3E7A /* String+CLRHelper.swift in Sources */,
+				758E56161EDB27F000B3D3B4 /* CLRParser.swift in Sources */,
+				758E560D1EDB134D00B3D3B4 /* JSONRepresentable.swift in Sources */,
+				758E55FF1ED90F8300B3D3B4 /* OptionModel.swift in Sources */,
 				7536482E1ED7402700DB3E7A /* CodeGenerator.swift in Sources */,
 				75910A251ED4E0CD001078B6 /* main.swift in Sources */,
 				756801CF1ED51BA700F8A192 /* SwiftCodeGenerator.swift in Sources */,
+				758E56011ED91AC300B3D3B4 /* JSONInputHandler.swift in Sources */,
+				758E560B1EDB132900B3D3B4 /* NSColorProvider.swift in Sources */,
 				753648341ED7411000DB3E7A /* NSColor+CLRHelper.swift in Sources */,
 				753648361ED7424500DB3E7A /* Constants.swift in Sources */,
+				758E56051ED91C5100B3D3B4 /* InputHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

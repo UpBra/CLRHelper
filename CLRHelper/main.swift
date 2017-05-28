@@ -6,20 +6,11 @@
 import Foundation
 import AppKit
 
-enum InputMode: String {
-    case unknown = ""
-    case json = "json"
-    case clr = "clr"
-}
 
 var mode = InputMode.unknown
-var titleValue: String?
-var inputValue: String?
-var outputValue: String?
-var generateSwift: Bool = false
-var generateJava: Bool = false
+let options = OptionModel()
 
-while case let option = getopt(CommandLine.argc, CommandLine.unsafeArgv, "m:t:i:o:"), option != -1 {
+while case let option = getopt(CommandLine.argc, CommandLine.unsafeArgv, "m:t:p:i:o:sj"), option != -1 {
 
     let scalar = UnicodeScalar(CUnsignedChar(option))
 
@@ -28,61 +19,37 @@ while case let option = getopt(CommandLine.argc, CommandLine.unsafeArgv, "m:t:i:
         mode = InputMode(rawValue: String(cString: optarg)) ?? .unknown
 
     case "t":
-        titleValue = String(cString: optarg)
+        options.title = String(cString: optarg)
+
+    case "p":
+        options.prefix = String(cString: optarg)
 
     case "i":
-        inputValue = String(cString: optarg)
+        options.inputPath = String(cString: optarg)
 
     case "o":
-        outputValue = String(cString: optarg)
+        options.outputDir = String(cString: optarg)
+
+    case "s":
+        options.generateSwift = true
+
+    case "j":
+        options.generateJava = true
 
     default:
-        printHelp()
+        break
     }
 }
 
-guard mode != .unknown else {
-    print("Missing -m Input mode is required")
-    printHelp()
-}
-
-guard let title = titleValue else {
-    print("Missing -t Title is required")
-    printHelp()
-}
-
-guard let input = inputValue else {
-    print("Missing -i Input is required")
-    printHelp()
-}
-
-guard let output = outputValue else {
-    print("Missing -o Output directory is required")
-    printHelp()
-}
-
-var list: NSColorList?
-let saveURL = URL(fileURLWithPath: output)
-
 switch mode {
 case .json:
-    list = NSColorList(jsonFile: input)
+    guard let handler = JSONInputHandler(options: options) else { exit(EXIT_FAILURE) }
+    handler.execute()
 
 case .clr:
-    print("clr input not implemented")
-    printHelp()
+    guard let handler = CLRInputHandler(options: options) else { exit(EXIT_FAILURE) }
+    handler.execute()
 
 default:
     printHelp()
 }
-
-guard let list = list else { printHelp() }
-
-do {
-    let clrURL = saveURL.appendingPathComponent("title.clr")
-    try list.write(to: clrURL)
-} catch { }
-
-
-let swiftURL = saveURL.appendingPathComponent("UIColor-Title.swift")
-SwiftCodeGenerator.write(list, toURL: swiftURL)

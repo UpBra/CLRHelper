@@ -7,9 +7,14 @@ import Foundation
 
 
 typealias JSONObject = [String:Any]
+typealias JSONArray = [JSONObject]
 
 
-func printHelp() -> Never {
+func printHelp(_ message: String? = nil) -> Never {
+    if let message = message {
+        print(message)
+    }
+
     print("help. i need somebody.")
     print("help. not just anybody.")
 
