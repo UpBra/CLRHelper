@@ -12,23 +12,27 @@ class SwiftCodeGenerator: CodeGenerator {
     static func write(_ container: ColorsContainer, toDir directory: String) {
         var template = Template.Swift
 
-        var caseStrings = ""
-        var colorModelStrings = ""
+        var enumDeclarations = [String]()
+        var allCasesArray = [String]()
+        var colorModels = [String]()
 
-        for (index, item) in container.colors.enumerated() {
-            let camcelCaseName = item.caseName(prefix: container.prefix)
-            let caseStatement = String(format: Template.Format.Case, camcelCaseName)
-            let colorModelStatement = String(format: Template.Format.ColorModel, camcelCaseName, item.red, item.green, item.blue, item.alpha)
+        for item in container.colors {
+            let camelCaseName = item.caseName(prefix: container.prefix)
 
-            let isLast = index == container.colors.count - 1
+            let declaration = String(format: Template.Format.EnumDeclaration, camelCaseName)
+            enumDeclarations.append(declaration)
 
-            isLast ? caseStrings.append(caseStatement) : caseStrings.appendLine(caseStatement)
-            isLast ? colorModelStrings.append(colorModelStatement) : colorModelStrings.appendLine(colorModelStatement)
+            let caseShorthand = String(format: Template.Format.CaseShorthand, camelCaseName)
+            allCasesArray.append(caseShorthand)
+
+            let colorModelStatement = String(format: Template.Format.ColorModel, camelCaseName, item.red, item.green, item.blue, item.alpha)
+            colorModels.append(colorModelStatement)
         }
 
         template = template.replacingOccurrences(of: Template.Key.Title, with: container.title)
-        template = template.replacingOccurrences(of: Template.Key.CaseStatements, with: caseStrings)
-        template = template.replacingOccurrences(of: Template.Key.ColorModels, with: colorModelStrings)
+        template = template.replacingOccurrences(of: Template.Key.CaseStatements, with: enumDeclarations.joined(separator: ",\n"))
+        template = template.replacingOccurrences(of: Template.Key.AllCases, with: allCasesArray.joined(separator: ", "))
+        template = template.replacingOccurrences(of: Template.Key.ColorModels, with: colorModels.joined(separator: ",\n"))
 
         let saveURL = URL(fileURLWithPath: directory).appendingPathComponent("UIColor+\(container.title).swift")
 
@@ -48,13 +52,15 @@ extension SwiftCodeGenerator {
 
         struct Key {
             static let Title = "{TITLE}"
+            static let AllCases = "{ALL_CASES}"
             static let CaseStatements = "__CASE_STATEMENTS__"
             static let ColorModels = "__COLOR_MODELS__"
         }
 
         struct Format {
-            static let Case = "\tcase %@"
-            static let ColorModel = "\t.%@ : (%.0f, %.0f, %.0f, %.1f)"
+            static let EnumDeclaration = "\tcase %@"
+            static let CaseShorthand = ".%@"
+            static let ColorModel = "\t.%@: (%.0f, %.0f, %.0f, %.1f)"
         }
 
         static let Swift: String = [
@@ -68,6 +74,10 @@ extension SwiftCodeGenerator {
             "",
             "enum \(Template.Key.Title) {",
             Template.Key.CaseStatements,
+            "}",
+            "",
+            "struct \(Template.Key.Title)Constant {",
+            "\tstatic let All: [\(Template.Key.Title)] = [\(Template.Key.AllCases)]",
             "}",
             "",
             "typealias ColorModel = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)",
