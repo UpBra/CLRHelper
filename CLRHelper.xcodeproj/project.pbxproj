@@ -106,9 +106,8 @@
 		753648301ED740B300DB3E7A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				758E56021ED91BBC00B3D3B4 /* CLRInputHandler.swift */,
-				758E56041ED91C5100B3D3B4 /* InputHandler.swift */,
-				758E56001ED91AC300B3D3B4 /* JSONInputHandler.swift */,
+				75D5673F1EE5A86200E05436 /* InputHandlers */,
+				758E56081EDB101A00B3D3B4 /* Objects */,
 				758E56091EDB110C00B3D3B4 /* CodeGenerators */,
 				758E56121EDB27A300B3D3B4 /* Parsers */,
 			);
@@ -166,7 +165,6 @@
 			children = (
 				75910A241ED4E0CD001078B6 /* main.swift */,
 				753648351ED7424500DB3E7A /* Constants.swift */,
-				758E56081EDB101A00B3D3B4 /* Objects */,
 				753648301ED740B300DB3E7A /* Classes */,
 				7536482C1ED7400300DB3E7A /* Protocols */,
 				7536482F1ED7406B00DB3E7A /* Extensions */,
@@ -181,6 +179,16 @@
 				75910A351ED4F88D001078B6 /* Info.plist */,
 			);
 			path = CLRHelperTest;
+			sourceTree = "<group>";
+		};
+		75D5673F1EE5A86200E05436 /* InputHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				758E56041ED91C5100B3D3B4 /* InputHandler.swift */,
+				758E56001ED91AC300B3D3B4 /* JSONInputHandler.swift */,
+				758E56021ED91BBC00B3D3B4 /* CLRInputHandler.swift */,
+			);
+			name = InputHandlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
